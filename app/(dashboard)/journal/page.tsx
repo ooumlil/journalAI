@@ -1,3 +1,7 @@
+import { prisma } from "@/utils/db";
+
+const getEntries = async () => {}
+
 export default function Journal() {
-  return <>hh</>;
+  return <div>hh</div>;
 }
