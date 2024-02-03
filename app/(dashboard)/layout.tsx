@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             <UserButton />
           </div>
         </header>
-        <main className="">{children}</main>
+        <main className="h-full">{children}</main>
       </div>
     </div>
   );

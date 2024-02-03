@@ -1,3 +1,5 @@
+import EntryCard from '@/components/entryCard';
+import NewEntryCard from '@/components/newEntryCard';
 import { getUserByClerkId } from '@/utils/auth';
 import { prisma } from '@/utils/db';
 
@@ -15,5 +17,15 @@ const getEntries = async () => {
 export default async function Journal() {
   const entries = await getEntries();
   console.log('entries', entries);
-  return <div>hh</div>;
+  return (
+    <div className="p-10 bg-zinc-400/50 h-full">
+      <span className="text-2xl mb-8">Journal</span>
+      <div className="grid grid-cols-3 gap-4">
+        <NewEntryCard />
+        {entries.map((entry: any) => (
+          <EntryCard entry={entry} key={entry.id} />
+        ))}
+      </div>
+    </div>
+  );
 }
