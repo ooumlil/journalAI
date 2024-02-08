@@ -1,5 +1,6 @@
 import EntryCard from '@/components/entryCard';
 import NewEntryCard from '@/components/newEntryCard';
+import { analyse } from '@/utils/ai';
 import { getUserByClerkId } from '@/utils/auth';
 import { prisma } from '@/utils/db';
 import Link from 'next/link';
@@ -12,6 +13,7 @@ const getEntries = async () => {
       createdAt: 'desc',
     },
   });
+  await analyse();
   return entries;
 };
 
