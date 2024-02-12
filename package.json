@@ -11,14 +11,14 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.4",
     "@langchain/openai": "^0.0.14",
-    "@prisma/client": "^5.9.0",
+    "@prisma/client": "^5.9.1",
     "langchain": "^0.1.15",
     "next": "14.1.0",
     "pg": "^8.11.3",
-    "prisma": "^5.9.0",
     "react": "^18",
     "react-autosave": "^0.4.4",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -28,6 +28,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
+    "prisma": "^5.9.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

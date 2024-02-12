@@ -13,7 +13,6 @@ const getEntries = async () => {
       createdAt: 'desc',
     },
   });
-  await analyse();
   return entries;
 };
 
