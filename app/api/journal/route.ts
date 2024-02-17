@@ -9,13 +9,12 @@ export const POST = async () => {
   const entry = await prisma.journalEntry.create({
     data: {
       userId: user.id,
-      content:
-        'i enjoyed this day so far, i got invited to a friend gathering celebrating my friend landing a job we had fun and ate some decent food.',
+      content: 'Write about your day!',
     },
   });
   const analysis: any = await analyse(entry.content);
   await prisma.analysis.create({
-    data: { entryId: entry.id, ...analysis },
+    data: { userId: entry.userId, entryId: entry.id, ...analysis },
   });
   revalidatePath('/journal');
   return NextResponse.json({ data: entry });

@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 const links = [
   { href: '/', name: 'Home' },
   { href: '/journal', name: 'Journal' },
+  { href: '/history', name: 'History' },
 ];
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {

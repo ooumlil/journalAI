@@ -23,10 +23,13 @@ export const PATCH = async (req: Request, { params }: { params: any }) => {
       entryId: updatedEntry.id,
     },
     create: {
+      userId: user.id,
       entryId: updatedEntry.id,
       ...analysis,
     },
     update: analysis,
   });
-  return NextResponse.json({ data: {...updatedEntry, analysis: updatedAnalysis} });
+  return NextResponse.json({
+    data: { ...updatedEntry, analysis: updatedAnalysis },
+  });
 };
