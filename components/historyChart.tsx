@@ -1,7 +1,7 @@
-'use client'
-import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts'
+'use client';
+import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts';
 
-const CustomTooltip = ({ payload, label, active }) => {
+const CustomToolTip = ({ payload, label, active }) => {
   const dateLabel = new Date(label).toLocaleString('en-us', {
     weekday: 'long',
     year: 'numeric',
@@ -9,10 +9,10 @@ const CustomTooltip = ({ payload, label, active }) => {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-  })
+  });
 
   if (active) {
-    const analysis = payload[0].payload
+    const analysis = payload[0].payload;
     return (
       <div className="p-8 custom-tooltip bg-white/5 shadow-md border border-black/10 rounded-lg backdrop-blur-md relative">
         <div
@@ -22,11 +22,11 @@ const CustomTooltip = ({ payload, label, active }) => {
         <p className="label text-sm text-black/30">{dateLabel}</p>
         <p className="intro text-xl uppercase">{analysis.mood}</p>
       </div>
-    )
+    );
   }
 
-  return null
-}
+  return null;
+};
 
 const HistoryChart = ({ data }: any) => {
   return (
@@ -40,10 +40,10 @@ const HistoryChart = ({ data }: any) => {
           activeDot={{ r: 8 }}
         />
         <XAxis dataKey="updatedAt" />
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={<CustomToolTip />} />
       </LineChart>
     </ResponsiveContainer>
-  )
-}
+  );
+};
 
-export default HistoryChart
+export default HistoryChart;
