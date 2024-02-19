@@ -1,6 +1,7 @@
 'use client';
 
 import { updateEntry } from '@/utils/api';
+import { JournalEntry } from '@/utils/types';
 import { useState } from 'react';
 import { useAutosave } from 'react-autosave';
 
@@ -19,7 +20,7 @@ export default function Editor({ entry }: { entry: any }) {
     },
   });
 
-  const { summary, subject, mood, negative, color }: any = analysis;
+  const { summary, subject, mood, negative, color } = analysis;
   const analysisData = [
     { name: 'Summary', value: summary },
     { name: 'Subject', value: subject },

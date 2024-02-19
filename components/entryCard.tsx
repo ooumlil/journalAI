@@ -1,4 +1,6 @@
-export default function EntryCard({ entry }: { entry: any }) {
+import { JournalEntry } from "@/utils/types";
+
+export default function EntryCard({ entry }: { entry: JournalEntry }) {
   const date = new Date(entry.createdAt).toDateString();
   return (
     <div

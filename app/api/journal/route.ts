@@ -1,6 +1,7 @@
 import { analyse } from '@/utils/ai';
 import { getUserByClerkId } from '@/utils/auth';
 import { prisma } from '@/utils/db';
+import { Analyse } from '@/utils/types';
 import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
 
@@ -12,9 +13,9 @@ export const POST = async () => {
       content: 'Write about your day!',
     },
   });
-  const analysis: any = await analyse(entry.content);
+  const analysis = await analyse(entry.content);
   await prisma.analysis.create({
-    data: { userId: entry.userId, entryId: entry.id, ...analysis },
+    data: { userId: entry.userId, entryId: entry.id, ...analysis! },
   });
   revalidatePath('/journal');
   return NextResponse.json({ data: entry });

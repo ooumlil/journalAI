@@ -5,6 +5,7 @@ import z from 'zod';
 import { Document } from 'langchain/document';
 import { loadQARefineChain } from 'langchain/chains';
 import { MemoryVectorStore } from 'langchain/vectorstores/memory';
+import { Analyse, JournalEntry } from './types';
 
 const parser = StructuredOutputParser.fromZodSchema(
   z.object({
@@ -30,7 +31,7 @@ const parser = StructuredOutputParser.fromZodSchema(
   })
 );
 
-const getPrompt = async (content: string) => {
+const getPrompt = async (content: string): Promise<string> => {
   const formattedInstructions = parser.getFormatInstructions();
   const prompt = new PromptTemplate({
     template: `Analyse the following journal entry. Follow the instructions and format your response to match the format instructions,
@@ -52,12 +53,12 @@ export const analyse = async (prompt: string) => {
   } catch (error) {
     console.log('error', error);
   }
-  return result;
+  return null;
 };
 
-export const qa = async (question: string, entries: any) => {
+export const qa = async (question: string, entries: JournalEntry[]) => {
   const docs = entries.map(
-    (entry: any) =>
+    (entry: JournalEntry) =>
       new Document({
         pageContent: entry.content,
         metadata: { id: entry.id, createdAt: entry.createdAt },

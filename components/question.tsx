@@ -8,10 +8,10 @@ export default function Question() {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const onChange = (e: any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     const answer = await askQuestion(value);

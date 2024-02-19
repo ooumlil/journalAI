@@ -1,7 +1,7 @@
 'use client';
 import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts';
 
-const CustomToolTip = ({ payload, label, active }) => {
+const CustomToolTip = ({ payload, label, active }: any) => {
   const dateLabel = new Date(label).toLocaleString('en-us', {
     weekday: 'long',
     year: 'numeric',
@@ -35,7 +35,7 @@ const HistoryChart = ({ data }: any) => {
         <Line
           type="monotone"
           dataKey="sentimentScore"
-          stroke="#8884d8"
+          stroke="#3b83f6"
           strokeWidth={2}
           activeDot={{ r: 8 }}
         />
