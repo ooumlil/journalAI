@@ -23,7 +23,7 @@ const getEntries = async () => {
 export default async function Journal() {
   const entries: JournalEntry[] = await getEntries();
   return (
-    <div className="p-10 bg-zinc-400/50 h-full">
+    <div className="p-10 bg-zinc-400/50 h-full overflow-y-auto">
       <span className="text-2xl mb-8">Journal</span>
       <div className=" my-8">
         <Question />

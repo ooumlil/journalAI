@@ -27,13 +27,10 @@ const HistoryPage = async () => {
         <h1 className="text-2xl mb-4">{`Avg. Sentiment: ${average}`}</h1>
       </div>
       <div className="h-full w-full">
-        <HistoryChart data={analyses} />
+        <HistoryChart analyses={analyses} />
       </div>
     </div>
   );
 };
 
 export default HistoryPage;
-function getUserFromClerkID() {
-  throw new Error('Function not implemented.');
-}
