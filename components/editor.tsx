@@ -5,10 +5,10 @@ import { JournalEntry } from '@/utils/types';
 import { useState } from 'react';
 import { useAutosave } from 'react-autosave';
 
-export default function Editor({ entry }: { entry: any }) {
+export default function Editor({ entry }: { entry: JournalEntry }) {
   const [value, setValue] = useState(entry.content);
   const [isLoading, setIsLoading] = useState(false);
-  const [analysis, setAnalysis] = useState(entry.analysis);
+  const [analysis, setAnalysis] = useState(entry.analysis!);
 
   useAutosave({
     data: value,

@@ -17,11 +17,11 @@ const getEntries = async () => {
       analysis: true,
     },
   });
-  return entries;
+  return entries as JournalEntry[];
 };
 
 export default async function Journal() {
-  const entries: JournalEntry[] = await getEntries();
+  const entries = await getEntries();
   return (
     <div className="p-10 bg-zinc-400/50 h-full overflow-y-auto">
       <span className="text-2xl mb-8">Journal</span>
