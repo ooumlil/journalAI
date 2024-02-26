@@ -1,6 +1,6 @@
 import { prisma } from '@/utils/db';
 import { currentUser } from '@clerk/nextjs';
-import { redirect, useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 const createNewUser = async () => {
   const user = await currentUser();
@@ -15,11 +15,11 @@ const createNewUser = async () => {
       },
     });
   }
+  return true;
 };
 
 export default async function NewUser() {
-  // const router = useRouter();
-  await createNewUser();
-  // router.push('/journal');
+  const ret = await createNewUser();
+  ret ? redirect('/(dashboard)/journal') : null;
   return <>...loading</>;
 }
