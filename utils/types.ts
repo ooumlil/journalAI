@@ -20,6 +20,7 @@ export interface Analyse {
   negative: boolean;
   summary: string;
   color: string;
+  emoji: string;
   sentimentScore: number;
 }
 
@@ -35,6 +36,7 @@ export interface Analysis {
   summary: string;
   subject: string;
   color: string;
+  emoji: string;
   negative: boolean;
   sentimentScore: number;
 }

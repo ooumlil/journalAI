@@ -28,6 +28,7 @@ const parser = StructuredOutputParser.fromZodSchema(
       .describe(
         'sentiment of the text rated from -10 to 10, where -10 is extremely negative, 0 is neutral and 10 is extremely positive.'
       ),
+    emoji: z.string().describe(`an emoji describing the entry's mood.`),
   })
 );
 
