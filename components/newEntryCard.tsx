@@ -11,12 +11,10 @@ export default function NewEntryCard() {
   };
   return (
     <div
-      className="cursor-pointer overflow-hidden rounded-lg bg-white shadow"
+      className="cursor-pointer overflow-hidden rounded-lg bg-blue-400 shadow w-1/3 flex items-center justify-center"
       onClick={handleOnClick}
     >
-      <div className="px-4 py-5 sm:p-6">
-        <span className="text-3xl">New Entry</span>
-      </div>
+      <h1 className="text-xl font-semibold">Create New Entry</h1>
     </div>
   );
 }

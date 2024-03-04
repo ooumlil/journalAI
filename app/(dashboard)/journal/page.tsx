@@ -1,6 +1,7 @@
 import EntryCard from '@/components/entryCard';
 import NewEntryCard from '@/components/newEntryCard';
 import Question from '@/components/question';
+import ThemeToggle from '@/components/themeToggle';
 import { getUserByClerkId } from '@/utils/auth';
 import { prisma } from '@/utils/db';
 import { JournalEntry, User } from '@/utils/types';
@@ -23,13 +24,13 @@ const getEntries = async () => {
 export default async function Journal() {
   const entries = await getEntries();
   return (
-    <div className="p-10 bg-zinc-400/50 h-full overflow-y-auto">
-      <span className="text-2xl mb-8">Journal</span>
-      <div className=" my-8">
+    <div className="p-10 h-full overflow-y-auto">
+      <div className="flex justify-between pb-4">
         <Question />
-      </div>
-      <div className="grid grid-cols-3 gap-4">
         <NewEntryCard />
+      </div>
+      <h1 className="text-xl mb-2">Journal List</h1>
+      <div className="grid grid-cols-3 gap-4">
         {entries.map((entry) => (
           <Link href={`/journal/${entry.id}`} key={entry.id}>
             <EntryCard entry={entry} />

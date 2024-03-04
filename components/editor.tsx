@@ -20,12 +20,13 @@ export default function Editor({ entry }: { entry: JournalEntry }) {
     },
   });
 
-  const { summary, subject, mood, negative, color } = analysis;
+  const { summary, subject, mood, negative, color, emoji } = analysis;
   const analysisData = [
     { name: 'Summary', value: summary },
     { name: 'Subject', value: subject },
     { name: 'Mood', value: mood },
     { name: 'Negative', value: `${negative}` },
+    { name: 'Emoji', value: emoji },
   ];
   return (
     <div className="w-full h-full  grid grid-cols-3">

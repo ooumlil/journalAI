@@ -20,6 +20,6 @@ const createNewUser = async () => {
 
 export default async function NewUser() {
   const ret = await createNewUser();
-  ret ? redirect('/(dashboard)/journal') : null;
+  ret ? redirect('/journal') : null;
   return <>...loading</>;
 }
