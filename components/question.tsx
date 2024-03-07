@@ -21,21 +21,21 @@ export default function Question() {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex gap-4">
         <input
           disabled={loading}
           onChange={onChange}
           value={value}
           type="text"
           placeholder="Ask a question"
-          className="border border-black/20 p-3 text-lg  rounded-lg "
+          className="border border-black/20 p-3 text-lg  rounded-lg"
         />
         <button
           disabled={loading}
           type="submit"
           className="bg-blue-400 p-3 rounded-lg text-lg"
         >
-          Ask
+          ask
         </button>
         {loading && <div>...loading</div>}
         {response && <div>{response}</div>}

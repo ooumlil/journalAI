@@ -5,10 +5,10 @@ import { JournalEntry } from '@/utils/types';
 import { useState } from 'react';
 import { useAutosave } from 'react-autosave';
 
-export default function Editor({ entry }: { entry: any }) {
+export default function Editor({ entry }: { entry: JournalEntry }) {
   const [value, setValue] = useState(entry.content);
   const [isLoading, setIsLoading] = useState(false);
-  const [analysis, setAnalysis] = useState(entry.analysis);
+  const [analysis, setAnalysis] = useState(entry.analysis!);
 
   useAutosave({
     data: value,
@@ -20,12 +20,13 @@ export default function Editor({ entry }: { entry: any }) {
     },
   });
 
-  const { summary, subject, mood, negative, color } = analysis;
+  const { summary, subject, mood, negative, color, emoji } = analysis;
   const analysisData = [
     { name: 'Summary', value: summary },
     { name: 'Subject', value: subject },
     { name: 'Mood', value: mood },
     { name: 'Negative', value: `${negative}` },
+    { name: 'Emoji', value: emoji },
   ];
   return (
     <div className="w-full h-full  grid grid-cols-3">
