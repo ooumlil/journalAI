@@ -1,5 +1,5 @@
 'use client';
-
+import { LuMoon, LuSun } from 'react-icons/lu';
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
@@ -19,13 +19,19 @@ export default function ThemeToggle() {
     }
   }, [isDarkMode]);
   return (
-    <>
-      <button
-        className="w-12 h-6 rounded-full bg-red-800 dark:bg-blue-700"
+    <div className="absolute left-[50%] -top-10 ">
+      <div
+        className="size-10 rounded-full cursor-pointer border-black dark:border-zinc-100 border-2 flex items-center justify-center dark:bg-zinc-100 bg-black"
         onClick={() => {
           setIsDarkMode(!isDarkMode);
         }}
-      ></button>
-    </>
+      >
+        {isDarkMode ? (
+          <LuMoon className="w-5 h-5 text-black" />
+        ) : (
+          <LuSun className="w-5 h-5 text-zinc-100" />
+        )}
+      </div>
+    </div>
   );
 }
