@@ -10,11 +10,13 @@ export default function NewEntryCard() {
     router.push(`/journal/${data.id}`);
   };
   return (
-    <div
-      className="cursor-pointer overflow-hidden rounded-lg bg-blue-400 shadow w-1/3 flex items-center justify-center"
+    <button
+      className="cursor-pointer overflow-hidden rounded-lg bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-500/90 hover:bg-blue-600/90 shadow w-1/4 flex items-center justify-center"
       onClick={handleOnClick}
     >
-      <h1 className="text-xl font-semibold">Create New Entry</h1>
-    </div>
+      <h1 className="text-xl font-medium text-zinc-100 dark:text-zinc-100">
+        Create Entry
+      </h1>
+    </button>
   );
 }

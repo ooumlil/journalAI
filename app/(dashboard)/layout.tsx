@@ -7,14 +7,18 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <div className={`h-screen w-screen flex overflow-y-hidden`}>
       <div className="w-full h-full text-neutral-900 dark:text-gray-100 dark:bg-slate-900">
-        <header className="h-[10%] border-b">
-          <div className="h-full w-full flex items-center justify-around">
+        <header className="h-[10%]">
+          <div className="h-full w-full flex items-center justify-between">
+            <div className="ml-6">
+              <UserButton />
+            </div>
             <NavBar />
-            <ThemeToggle />
-            <UserButton />
           </div>
         </header>
-        <main className="h-[90%]">{children}</main>
+        <main className="relative h-[90%]">
+          <ThemeToggle />
+          {children}
+        </main>
       </div>
     </div>
   );

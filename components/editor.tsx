@@ -33,7 +33,7 @@ export default function Editor({ entry }: { entry: JournalEntry }) {
       <div className="col-span-2">
         {isLoading && <div>loading...</div>}
         <textarea
-          className="w-full h-full p-8 text-xl outline-none"
+          className="w-full h-full p-8 text-xl outline-none dark:bg-slate-900"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -44,11 +44,11 @@ export default function Editor({ entry }: { entry: JournalEntry }) {
           <h2 className="text-2xl">Ai stuff</h2>
         </div>
         <div>
-          <ul>
+          <ul className="flex flex-col gap-4">
             {analysisData.map((item) => (
               <li
                 key={item.name}
-                className="flex items-center justify-between border-t border-b border-black/10 p-2"
+                className="flex items-center justify-between p-2 gap-1"
               >
                 <span className="font-semibold text-lg">{item.name}</span>
                 <span>{item.value}</span>

@@ -5,7 +5,7 @@ export default async function Home() {
   const { userId } = await auth();
   let href = !userId ? '/new-user' : '/journal';
   return (
-    <div className="w-screen h-screen bg-slate-200 dark:bg-slate-900 flex justify-center items-center text-slate-900 dark:text-white">
+    <div className="w-screen h-screen bg-slate-100 dark:bg-slate-900 flex justify-center items-center text-slate-900 dark:text-white">
       <div className="w-full max-w-[600px] mx-auto">
         <h1 className="text-6xl mb-4">The Best Journal App</h1>
         <p className="text-2xl text-slate-900/80 dark:text-white/80 mb-4">
