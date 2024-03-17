@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs';
 import Link from 'next/link';
 
 export default async function Home() {
-  const { userId } = await auth();
+  const { userId } = auth();
   let href = !userId ? '/new-user' : '/journal';
   return (
     <div className="w-screen h-screen bg-slate-100 dark:bg-slate-900 flex justify-center items-center text-slate-900 dark:text-white">

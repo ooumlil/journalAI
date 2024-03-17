@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <div className={`h-screen w-screen flex overflow-y-hidden`}>
-      <div className="w-full h-full text-neutral-900 dark:text-gray-100 dark:bg-slate-900">
+      <div className="w-full h-full text-neutral-900 dark:text-gray-100 dark:bg-[#171a1c]">
         <header className="h-[10%]">
           <div className="h-full w-full flex items-center justify-between">
             <div className="ml-6">

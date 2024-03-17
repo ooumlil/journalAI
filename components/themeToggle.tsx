@@ -36,14 +36,11 @@ export default function ThemeToggle() {
   return (
     <div className="absolute left-[50%] -top-10 ">
       <div
-        className="size-10 rounded-full cursor-pointer border-black dark:border-zinc-100 border-2 flex items-center justify-center dark:bg-zinc-100 bg-black"
+        className="size-10 rounded-full cursor-pointer flex items-center justify-center dark:bg-slate-400/10 bg-slate-400/10"
         onClick={Toggle}
       >
-        {isDarkMode ? (
-          <LuMoon className="w-5 h-5 text-black" />
-        ) : (
-          <LuSun className="w-5 h-5 text-zinc-100" />
-        )}
+        <LuMoon className="w-5 h-5 text-black block dark:hidden" />
+        <LuSun className="w-5 h-5 text-yellow-300 hidden dark:block" />
       </div>
     </div>
   );

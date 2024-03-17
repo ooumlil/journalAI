@@ -4,6 +4,7 @@ import { updateEntry } from '@/utils/api';
 import { JournalEntry } from '@/utils/types';
 import { useState } from 'react';
 import { useAutosave } from 'react-autosave';
+import Spinner from './spinner';
 
 export default function Editor({ entry }: { entry: JournalEntry }) {
   const [value, setValue] = useState(entry.content);
@@ -12,6 +13,7 @@ export default function Editor({ entry }: { entry: JournalEntry }) {
 
   useAutosave({
     data: value,
+    interval: 10000,
     onSave: async (_value) => {
       setIsLoading(true);
       const data = await updateEntry(entry.id, _value);
@@ -31,9 +33,13 @@ export default function Editor({ entry }: { entry: JournalEntry }) {
   return (
     <div className="w-full h-full  grid grid-cols-3">
       <div className="col-span-2">
-        {isLoading && <div>loading...</div>}
+        {isLoading && (
+          <div className="absolute flex items-center">
+            <Spinner />
+          </div>
+        )}
         <textarea
-          className="w-full h-full p-8 text-xl outline-none dark:bg-slate-900"
+          className="w-full h-full p-8 text-xl outline-none dark:bg-[#3b3b3b] dark:text-[#d9d6d0] text-slate-900 bg-[#f5f5f5]"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />

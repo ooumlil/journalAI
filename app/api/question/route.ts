@@ -1,7 +1,7 @@
-import { qa } from '@/utils/ai';
-import { getUserByClerkId } from '@/utils/auth';
-import { prisma } from '@/utils/db';
-import { JournalEntry } from '@/utils/types';
+import { qa } from '@utils/ai';
+import { getUserByClerkId } from '@utils/auth';
+import { prisma } from '@utils/db';
+import { JournalEntry } from '@utils/types';
 import { NextResponse } from 'next/server';
 
 export const POST = async (request: Request) => {

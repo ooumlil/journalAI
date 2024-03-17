@@ -1,7 +1,7 @@
-import { analyse } from '@/utils/ai';
-import { getUserByClerkId } from '@/utils/auth';
-import { prisma } from '@/utils/db';
-import { Analyse } from '@/utils/types';
+import { analyse } from '@utils/ai';
+import { getUserByClerkId } from '@utils/auth';
+import { prisma } from '@utils/db';
+import { Analyse } from '@utils/types';
 import { NextResponse } from 'next/server';
 
 export const PATCH = async (
