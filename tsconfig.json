@@ -18,7 +18,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@utils/*": ["./utils/*"],
+      "@api/*": ["./app/api/*"],
+      "@public/*": ["./public/*"]
     }
   },
   "include": [

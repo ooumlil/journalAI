@@ -1,7 +1,7 @@
-import Editor from '@/components/editor';
-import { getUserByClerkId } from '@/utils/auth';
-import { prisma } from '@/utils/db';
-import { JournalEntry } from '@/utils/types';
+import Editor from '@components/editor';
+import { getUserByClerkId } from '@utils/auth';
+import { prisma } from '@utils/db';
+import { JournalEntry } from '@utils/types';
 
 const getEntry = async (id: string) => {
   const user = await getUserByClerkId();

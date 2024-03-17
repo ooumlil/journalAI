@@ -1,10 +1,9 @@
-import EntryCard from '@/components/entryCard';
-import NewEntryCard from '@/components/newEntryCard';
-import Question from '@/components/question';
-import ThemeToggle from '@/components/themeToggle';
-import { getUserByClerkId } from '@/utils/auth';
-import { prisma } from '@/utils/db';
-import { JournalEntry, User } from '@/utils/types';
+import EntryCard from '@components/entryCard';
+import NewEntryCard from '@components/newEntryCard';
+import Question from '@components/question';
+import { getUserByClerkId } from '@utils/auth';
+import { prisma } from '@utils/db';
+import { JournalEntry, User } from '@utils/types';
 import Link from 'next/link';
 
 const getEntries = async () => {

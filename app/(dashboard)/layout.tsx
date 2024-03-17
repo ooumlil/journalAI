@@ -1,5 +1,5 @@
-import NavBar from '@/components/navbar';
-import ThemeToggle from '@/components/themeToggle';
+import NavBar from '@components/navbar';
+import ThemeToggle from '@components/themeToggle';
 import { UserButton } from '@clerk/nextjs';
 import { ReactNode } from 'react';
 
