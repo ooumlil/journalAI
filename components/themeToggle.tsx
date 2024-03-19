@@ -34,7 +34,7 @@ export default function ThemeToggle() {
   }, []);
 
   return (
-    <div className="absolute left-[50%] -top-10 ">
+    <div className="absolute inset-0 z-10 left-[95%] top-[90%]">
       <div
         className="size-10 rounded-full cursor-pointer flex items-center justify-center dark:bg-slate-400/10 bg-slate-400/10"
         onClick={Toggle}
